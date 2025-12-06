@@ -21,7 +21,7 @@ export default function About() {
         </div>
 
         {/* Image */}
-        <div className="w-full md:w-1/3 flex-shrink-0">
+        <div className="w-full md:w-1/3 shrink-0">
           <img
             src="https://plus.unsplash.com/premium_photo-1676357175446-8e85f2205ea6?q=80&w=387&auto=format&fit=crop"
             alt="About Companies Directory"

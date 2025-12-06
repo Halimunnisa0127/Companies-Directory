@@ -1,16 +1,16 @@
+// src/Pages/Home.jsx
 import { useState } from "react";
-import { useCompanies } from "../hooks/useCompanies";
 import FilterControls from "../Components/FilterControls";
 import CompanyCard from "../Components/CompanyCard";
 import Pagination from "../Components/Pagination";
 import LoadingSpinner from "../Components/LoadingSpinner";
 
-export default function Home() {
-  const hook = useCompanies();
+export default function Home({ hook }) {
   const [isOpen, setIsOpen] = useState(false);
 
+  // use the hook that App passed down (do NOT call useCompanies() again here)
   const companies = hook.companies || hook.visibleCompanies || [];
-  const allCompanies = hook.allCompanies || hook.allFilteredCompanies || [];
+  const allCompanies = hook.allCompanies || [];
 
   const loading = hook.loading ?? false;
   const error = hook.error ?? null;
@@ -49,7 +49,6 @@ export default function Home() {
   return (
     <>
       <main className="px-4 sm:px-6 lg:px-8 py-8 max-w-7xl">
-
         {/* Floating Filter Button */}
         <button
           onClick={() => setIsOpen(true)}
@@ -64,7 +63,6 @@ export default function Home() {
         </button>
 
         {/* Active Filters Display */}
-
         <div className="flex flex-wrap gap-2 mt-4">
           {filters.search && (
             <div className="flex items-center bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm">
@@ -140,7 +138,6 @@ export default function Home() {
               industries={industries}
               locations={locations}
             />
-            
           </div>
         </div>
 
