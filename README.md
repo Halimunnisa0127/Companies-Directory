@@ -20,6 +20,12 @@ The Companies Directory is a comprehensive platform designed to help users disco
 - **State Management**: React Hooks (useState, useEffect, useMemo)
 - **Data**: Static JSON file (simulating API response)
 
+
+## 🖼️ Preview
+![Home Preview](./companies-directory/public/companies-directory.png)
+
+
+
 ## Getting Started
 
 ### Prerequisites
